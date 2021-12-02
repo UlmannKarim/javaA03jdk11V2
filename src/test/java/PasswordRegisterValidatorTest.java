@@ -5,11 +5,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class PasswordRegisterValidatorTest {
 
-    private PasswordRegisterValidatorTest testedPassword;
+    private PasswordRegisterValidator testedPassword;
 
     @BeforeEach
     void starter() {
-        testedPassword = new PasswordRegisterValidatorTest();
+        testedPassword = new PasswordRegisterValidator();
     }
 
     @Test
