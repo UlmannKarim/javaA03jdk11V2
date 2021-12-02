@@ -93,7 +93,7 @@ public class Register extends Application {
 
         SUBMIT.setOnAction(new EventHandler<ActionEvent>() {
 
-            @Override // check all input possibilities here
+            @Override // check all input possibilities here.
             public void handle(ActionEvent event) {
                 EmailRegisterValidator emailChecker = new EmailRegisterValidator();
                 if(emailChecker.test(emailBox.getText())) {
