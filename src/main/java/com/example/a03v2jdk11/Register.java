@@ -102,7 +102,7 @@ public class Register extends Application {
                 else {
                     dropMessage("Successful Registration", "Invalid Email. \n Please insert a valid Email.");
                 }
-
+                emailBox.setText("");
             }
         });
 
