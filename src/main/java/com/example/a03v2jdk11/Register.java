@@ -97,10 +97,10 @@ public class Register extends Application {
             public void handle(ActionEvent event) {
                 EmailRegisterValidator emailChecker = new EmailRegisterValidator();
                 if(emailChecker.test(emailBox.getText())) {
-                    dropMessage("Success", "1");
+                    dropMessage("Successful Registration", "Registration Successful! \n Thank you for registering with us.");
                 }
                 else {
-                    dropMessage("Rejected", "0");
+                    dropMessage("Successful Registration", "Invalid Email. \n Please insert a valid Email.");
                 }
 
             }
