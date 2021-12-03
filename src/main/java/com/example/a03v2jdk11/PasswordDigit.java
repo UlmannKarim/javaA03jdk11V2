@@ -8,3 +8,4 @@ public class PasswordDigit implements Predicate<String> {
         return false;
     }
 }
+//
