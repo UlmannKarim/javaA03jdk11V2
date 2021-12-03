@@ -115,23 +115,29 @@ public class Register extends Application {
                 String response  = "";
                 if(!emailChecker.test(emailBox.getText())) {
                     dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Invalid Email. \n Please insert a valid Email.");
+                    return;
                 }
                 if(!passwordLengthChecker.test(passBox.getText())) {
                     dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Invalid Password Length. \n Passwords must be at least 7 characters in length.");
+                    return;
                 }
                 if(!passwordDigit.test(passBox.getText())){
                     dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough");
+                    return;
                 }
                 if(!passwordLetter.test(passBox.getText())){
                     dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough");
+                    return;
                 }
                 if(!passwordSpecialChars.test(passBox.getText())){
-                    dropMessage(Alert.AlertType.ERROR, "0", "-1");
+                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough");
                 }
 
                 else {
                     dropMessage(Alert.AlertType.CONFIRMATION,"Successful Registration", "Registration Successful! \n Thank you for registering with us.");
+                    return;
                 }
+                return;
 //                emailBox.setText("");
 //                passBox.setText("");
             }
