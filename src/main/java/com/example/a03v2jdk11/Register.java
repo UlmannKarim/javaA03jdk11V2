@@ -7,10 +7,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -79,6 +76,20 @@ public class Register extends Application {
         emailBox.setPrefWidth(100);
         emailBox.setStyle("-fx-background-color: grey;");
         gp.add(emailBox, 1, 2);
+
+        Label pass;
+        PasswordField passBox;
+        pass = new Label("Password ");
+        pass.setFont(Font.font("Helvetica",  FontPosture.ITALIC,  20));
+        pass.setTextFill(Color.web("#93FFe0"));
+        pass.setStyle("-fx-background-color: black;");
+        gp.add(pass, 0, 3);
+
+        passBox = new PasswordField();
+        passBox.setPrefHeight(45);
+        passBox.setPrefWidth(100);
+        passBox.setStyle("-fx-background-color: grey;");
+        gp.add(passBox, 1, 4);
 
         Button SUBMIT = new Button("SUBMIT");
         SUBMIT.setFont(Font.font("Helvetica", FontPosture.ITALIC, 18));

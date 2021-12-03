@@ -14,7 +14,7 @@ public class PasswordRegisterValidatorTest {
 
     @Test
     void checkPassLength() {
-        String password = "";
+        String password = "1234567";
         boolean check = testedPassword.test(password);
         assertThat(check).isTrue();
     }
