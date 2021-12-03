@@ -13,7 +13,8 @@ public class PasswordRegisterValidatorTest {
     }
 
     @Test
-    void checkPassLength(String password) {
+    void checkPassLength() {
+        String password = "";
         boolean check = testedPassword.test(password);
         assertThat(check).isTrue();
     }

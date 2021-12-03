@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 
 public class PasswordRegisterValidator implements Predicate<String> {
     @Override
-    public boolean test(String s) {
-        return false;
+    public boolean test(String password) {
+        return password.length() >= 7;
     }
 }
