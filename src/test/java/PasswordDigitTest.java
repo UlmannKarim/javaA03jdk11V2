@@ -13,7 +13,7 @@ public class PasswordDigitTest {
     }
 
     @Test
-    void checkPassLength(String password) {
+    void checkIfDigitInPass(String password) {
         boolean check = testedPassword.test(password);
         assertThat(check).isTrue();
     }
