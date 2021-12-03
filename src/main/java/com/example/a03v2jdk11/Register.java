@@ -110,6 +110,7 @@ public class Register extends Application {
                 PasswordLengthValidator passwordLengthChecker = new PasswordLengthValidator();
                 PasswordDigit passwordDigit = new PasswordDigit();
                 PasswordLetter passwordLetter = new PasswordLetter();
+                PasswordSpecialChars passwordSpecialChars = new PasswordSpecialChars();
 
                 String response  = "";
                 if(!emailChecker.test(emailBox.getText())) {
@@ -124,13 +125,15 @@ public class Register extends Application {
                 if(!passwordLetter.test(passBox.getText())){
                     dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough");
                 }
-
+                if(!passwordSpecialChars.test(passBox.getText())){
+                    dropMessage(Alert.AlertType.ERROR, "0", "-1");
+                }
 
                 else {
                     dropMessage(Alert.AlertType.CONFIRMATION,"Successful Registration", "Registration Successful! \n Thank you for registering with us.");
                 }
-                emailBox.setText("");
-                passBox.setText("");
+//                emailBox.setText("");
+//                passBox.setText("");
             }
         });
 
