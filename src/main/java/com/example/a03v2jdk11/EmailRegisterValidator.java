@@ -5,7 +5,7 @@ public class EmailRegisterValidator implements Predicate<String> {
 
     @Override
     public boolean test(String emailAddress) {
-        String poss = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"; //will check for upper and lower case chars
+        String poss = "^[._%+A-Za-z0-9-]+@[A-Z0-9a-z.-]+\\.[A-Za-z]{2,6}$"; //will check for upper and lower case chars
         return emailAddress.matches(poss); // return true or false
     }
 }

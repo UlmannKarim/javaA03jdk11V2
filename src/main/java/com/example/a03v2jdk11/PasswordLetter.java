@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 public class PasswordLetter implements Predicate<String> {
     @Override
     public boolean test(String password) {
-        String regX = ".*[a-zA-Z]+.*";
+        String regX = ".*[A-Za-z]+.*";
         return password.matches(regX); // return true or false
     }
 }
