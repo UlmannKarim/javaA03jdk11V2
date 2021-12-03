@@ -1,3 +1,4 @@
+import com.example.a03v2jdk11.PasswordFullValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,4 +19,3 @@ public class PasswordFullValidatorTest {
             assertThat(check).isTrue();
         }
     }
-}
