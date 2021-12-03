@@ -9,7 +9,3 @@ public class PasswordSpecialChars implements Predicate<String> {
         return password.matches(specialChars);
     }
 }
-
-// "(?=.*[@#$%^&+=])"
-// ".*[a-zA-Z]+.*"
-// ^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$
