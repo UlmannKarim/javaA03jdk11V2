@@ -107,7 +107,7 @@ public class Register extends Application {
             @Override // check all input possibilities here.
             public void handle(ActionEvent event) {
                 EmailRegisterValidator emailChecker = new EmailRegisterValidator();
-                PasswordRegisterValidator passwordChecker = new PasswordRegisterValidator();
+                PasswordLengthValidator passwordChecker = new PasswordLengthValidator();
 
                 String response  = "";
                 if(!emailChecker.test(emailBox.getText())) {
@@ -116,6 +116,7 @@ public class Register extends Application {
                 if(!passwordChecker.test(passBox.getText())){
                     dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Invalid Password Length. \n Passwords must be at least 7 characters in length.");
                 }
+
                 else {
                     dropMessage(Alert.AlertType.CONFIRMATION,"Successful Registration", "Registration Successful! \n Thank you for registering with us.");
                 }
