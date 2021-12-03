@@ -111,6 +111,7 @@ public class Register extends Application {
                 PasswordDigit passwordDigit = new PasswordDigit();
                 PasswordLetter passwordLetter = new PasswordLetter();
                 PasswordSpecialChars passwordSpecialChars = new PasswordSpecialChars();
+                PasswordFullValidator passwordFullValidator = new PasswordFullValidator();
 
 
                 if(!emailChecker.test(emailBox.getText())) {
@@ -119,27 +120,36 @@ public class Register extends Application {
                     passBox.setText("");
                     return;
                 }
-                if(!passwordLengthChecker.test(passBox.getText())) {
-                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Invalid Password Length. \n Passwords must be at least 7 characters in length.");
+                if(!passwordFullValidator.test(passBox.getText())){
+                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected Password is not strong enough",
+                            "\n Please ensure that your password is \n\n\t •At least 7 characters in length." +
+                                    "\n\n\t •Contains at least one digit.\n\n\t •Contains at least one letter." +
+                                    "\n\n\t •Contains at least one of the following Special character\n\t *^&@!");
                     emailBox.setText("");
                     passBox.setText("");
                     return;
                 }
-                if(!passwordDigit.test(passBox.getText())){
-                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough\n A valid password must contain at least 1 digit");
-                    emailBox.setText("");
-                    passBox.setText("");
-                    return;
-                }
-                if(!passwordLetter.test(passBox.getText())){
-                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough\n A valid password must contain at least 1 letter");
-                    emailBox.setText("");
-                    passBox.setText("");
-                    return;
-                }
-                if(!passwordSpecialChars.test(passBox.getText())){
-                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough\n A valid password must contain one of the following character\n *^&@!");
-                }
+//                if(!passwordLengthChecker.test(passBox.getText())) {
+//                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Invalid Password Length. \n Passwords must be at least 7 characters in length.");
+//                    emailBox.setText("");
+//                    passBox.setText("");
+//                    return;
+//                }
+//                if(!passwordDigit.test(passBox.getText())){
+//                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough\n A valid password must contain at least 1 digit");
+//                    emailBox.setText("");
+//                    passBox.setText("");
+//                    return;
+//                }
+//                if(!passwordLetter.test(passBox.getText())){
+//                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough\n A valid password must contain at least 1 letter");
+//                    emailBox.setText("");
+//                    passBox.setText("");
+//                    return;
+//                }
+//                if(!passwordSpecialChars.test(passBox.getText())){
+//                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Password is not strong enough\n A valid password must contain one of the following character\n *^&@!");
+//                }
 
                 else {
                     dropMessage(Alert.AlertType.CONFIRMATION,"Successful Registration", "Registration Successful! \n Thank you for registering with us.");

@@ -14,7 +14,8 @@ public class PasswordFullValidatorTest {
         }
 
         @Test
-        void validateThePassword(String password) {
+        void validateThePassword() {
+            String password = "123abc";
             boolean check = testedPassword.test(password);
             assertThat(check).isTrue();
         }
