@@ -107,20 +107,27 @@ public class Register extends Application {
             @Override // check all input possibilities here.
             public void handle(ActionEvent event) {
                 EmailRegisterValidator emailChecker = new EmailRegisterValidator();
-                if(emailChecker.test(emailBox.getText())) {
-                    dropMessage("Successful Registration", "Registration Successful! \n Thank you for registering with us.");
+                PasswordRegisterValidator passwordChecker = new PasswordRegisterValidator();
+
+                String response  = "";
+                if(!emailChecker.test(emailBox.getText())) {
+                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Invalid Email. \n Please insert a valid Email.");
+                }
+                if(!passwordChecker.test(passBox.getText())){
+                    dropMessage(Alert.AlertType.ERROR, "Registration Rejected", "Invalid Password Length. \n Passwords must be at least 7 characters in length.");
                 }
                 else {
-                    dropMessage("Successful Registration", "Invalid Email. \n Please insert a valid Email.");
+                    dropMessage(Alert.AlertType.CONFIRMATION,"Successful Registration", "Registration Successful! \n Thank you for registering with us.");
                 }
                 emailBox.setText("");
+                passBox.setText("");
             }
         });
 
     }
 
-    private void dropMessage(String top, String msg) {
-        Alert alertWindow = new Alert(Alert.AlertType.CONFIRMATION);
+    private void dropMessage(Alert.AlertType type, String top, String msg) {
+        Alert alertWindow = new Alert(type);
         alertWindow.setTitle(top);
         alertWindow.setHeaderText(null);
         alertWindow.setContentText(msg);
