@@ -40,12 +40,12 @@ public class Register extends Application {
 
         gp = new GridPane();
         gp.setAlignment(center);
-        gp.setPadding(new Insets(40, 40, 40, 40));
+        gp.setPadding(new Insets(60, 60, 60, 60));
 
-        cC = new ColumnConstraints(100, 100, Double.MAX_VALUE);
+        cC = new ColumnConstraints(150, 150, Double.MAX_VALUE);
         cC.setHalignment(right);
 
-        cC2 = new ColumnConstraints(200,200, Double.MAX_VALUE);
+        cC2 = new ColumnConstraints(250,250, Double.MAX_VALUE);
         gp.getColumnConstraints().addAll(cC, cC2);
         return gp;
     }
@@ -107,11 +107,11 @@ public class Register extends Application {
             @Override // check all input possibilities here.
             public void handle(ActionEvent event) {
                 EmailRegisterValidator emailChecker = new EmailRegisterValidator();
-                PasswordLengthValidator passwordLengthChecker = new PasswordLengthValidator();
-                PasswordDigit passwordDigit = new PasswordDigit();
-                PasswordLetter passwordLetter = new PasswordLetter();
-                PasswordSpecialChars passwordSpecialChars = new PasswordSpecialChars();
                 PasswordFullValidator passwordFullValidator = new PasswordFullValidator();
+//                PasswordLengthValidator passwordLengthChecker = new PasswordLengthValidator();
+//                PasswordDigit passwordDigit = new PasswordDigit();
+//                PasswordLetter passwordLetter = new PasswordLetter();
+//                PasswordSpecialChars passwordSpecialChars = new PasswordSpecialChars();
 
 
                 if(!emailChecker.test(emailBox.getText())) {
