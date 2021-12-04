@@ -17,6 +17,17 @@ public class PasswordSpecialCharsTest {
         boolean check = testedPassword.test(password);
         assertThat(check).isTrue();
     }
+
+    @Test
+    void shouldNotFail() {
+        this.checkIfSpecialChars("123abc!");
+    }
+
+    @Test
+    void shouldFail(){
+        this.checkIfSpecialChars("123abc78");
+
+    }
 }
 
 

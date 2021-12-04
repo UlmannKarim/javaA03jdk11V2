@@ -13,9 +13,19 @@ public class PasswordLetterTest {
     }
 
     @Test
-    void checkPassLength(String password) {
+    void checkPassLetters(String password) {
         boolean check = testedPassword.test(password);
         assertThat(check).isTrue();
     }
 
+    @Test
+    void shouldNotFail() {
+        this.checkPassLetters("123abc");
+    }
+
+    @Test
+    void shouldFail(){
+        this.checkPassLetters("123");
+
+    }
 }

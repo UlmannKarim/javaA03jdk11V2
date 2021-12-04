@@ -18,5 +18,14 @@ public class PasswordLengthValidatorTest {
         assertThat(check).isTrue();
     }
 
+    @Test
+    void shouldNotFail() {
+        this.checkPassLength("1234567");
+    }
 
+    @Test
+    void shouldFail(){
+        this.checkPassLength("123456");
+
+    }
 }

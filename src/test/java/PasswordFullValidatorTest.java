@@ -14,9 +14,20 @@ public class PasswordFullValidatorTest {
         }
 
         @Test
-        void validateThePassword() {
-            String password = "123abc";
+        void validateThePassword(String password) {
             boolean check = testedPassword.test(password);
             assertThat(check).isTrue();
+        }
+
+        @Test
+        void shouldNotFail(){
+            this.validateThePassword("1234567ABC!@");
+
+        }
+
+        @Test
+        void shouldFail(){
+            this.validateThePassword("1234567!#");
+
         }
     }

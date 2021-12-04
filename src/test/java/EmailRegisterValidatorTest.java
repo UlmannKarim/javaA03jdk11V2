@@ -17,4 +17,10 @@ public class EmailRegisterValidatorTest {
         boolean check = testedEmail.test(emailAddress);
         assertThat(check).isTrue();
     }
+
+    @Test
+    void shouldNotFail(){
+        this.checkEmail("123@gmail.com");
+
+    }
 }

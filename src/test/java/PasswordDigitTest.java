@@ -18,4 +18,15 @@ public class PasswordDigitTest {
         assertThat(check).isTrue();
     }
 
+    @Test
+    void shouldNotFail(){
+        this.checkIfDigitInPass("P4SSW0RD");
+
+    }
+
+    @Test
+    void shouldFail(){
+        this.checkIfDigitInPass("PASSWORD");
+
+    }
 }
